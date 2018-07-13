@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gem for Users Authentication.
 gem 'devise'
+# Gem for styling elements
+gem "twitter-bootstrap-rails"
