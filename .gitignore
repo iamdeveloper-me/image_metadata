@@ -27,3 +27,4 @@
 
 # Ignore database.yml file
 /config/database.yml
+public/uploads/*
