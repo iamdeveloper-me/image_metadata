@@ -1,0 +1,26 @@
+<h3>Images Index</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"> # </th>
+      <th scope="col"> Image Name </th>
+      <th scope="col"> Extension </th>
+      <th scope="col"> Mime Type </th>
+      <th scope="col"> Size </th>
+      <th scope="col"> Metadata </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @photos.each_with_index do |photo, index| %>
+      <tr>
+        <th scope="row"> <%= index + 1 %> </th>
+        <td> <%= photo.image.original_filename %> <%#= image_tag(photo.image.url) %> </td>
+        <td> <%= photo.image.extension %> </td>
+        <td> <%= photo.image.mime_type %> </td>
+        <td> <%= photo.image.size %> </td>
+        <td> <%= photo.image.metadata %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
