@@ -1,0 +1,12 @@
+<% if notice %>
+  <p class="notice alert-warning"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<% if flash['success'] %>
+  <p class="alert alert-success"><%= flash['success'] %></p>
+<% end %>
+<% if flash['error'] %>
+  <p class="alert alert-danger"><%= flash['error'] %></p>
+<% end %>

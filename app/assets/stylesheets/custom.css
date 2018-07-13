@@ -1,3 +1,7 @@
 .form-error {
   color: red;
 }
+
+.header_links li {
+  display: inline-block;
+}
