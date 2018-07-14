@@ -1,23 +1,25 @@
-<ul class="nav header_links">
-  <li class="nav-item">
-    <%= link_to "Home", root_path, class: "nav-link active" %>
-  </li>
-  <% if user_signed_in? %>
+<div class="header-style">
+  <ul class="nav header_links">
     <li class="nav-item">
-      <%= link_to "Update Profile", edit_user_registration_path, class: "nav-link" %>
+      <%= link_to "Home", root_path, class: "nav-link active" %>
     </li>
-    <li class="nav-item">
-      <%= link_to "New Image", new_photo_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "All Image", photos_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-    </li>
-  <% else %>
-    <li class="nav-item">
-      <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-    </li>
-  <% end %>
-</ul>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "Update Profile", edit_user_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New Image", new_photo_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "All Image", photos_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

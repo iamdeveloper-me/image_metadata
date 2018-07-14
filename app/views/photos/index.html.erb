@@ -4,22 +4,22 @@
   <thead>
     <tr>
       <th scope="col"> # </th>
+      <th scope="col"> Image </th>
       <th scope="col"> Image Name </th>
-      <th scope="col"> Extension </th>
       <th scope="col"> Mime Type </th>
       <th scope="col"> Size </th>
-      <th scope="col"> Metadata </th>
+      <th scope="col"> Edit Metadata </th>
     </tr>
   </thead>
   <tbody>
     <% @photos.each_with_index do |photo, index| %>
       <tr>
         <th scope="row"> <%= index + 1 %> </th>
-        <td> <%= photo.image.original_filename %> <%#= image_tag(photo.image.url) %> </td>
-        <td> <%= photo.image.extension %> </td>
-        <td> <%= photo.image.mime_type %> </td>
-        <td> <%= photo.image.size %> </td>
-        <td> <%= photo.image.metadata %> </td>
+        <td> <%= image_tag(photo.avatar.url, size: "80x60") %> </td>
+        <td> <%= photo.avatar.file.filename %> </td>
+        <td> <%= photo.avatar.content_type %> </td>
+        <td> <%= photo.avatar.size %> </td>
+        <td> <%= link_to "Edit Meta", edit_metadata_photo_path(photo.id) %> </td>
       </tr>
     <% end %>
   </tbody>

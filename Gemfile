@@ -67,3 +67,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # Gem for styling elements
 gem "twitter-bootstrap-rails"
+gem 'carrierwave', '~> 1.0'
+# gem 'magick-metadata'
+# gem 'exif'
+gem 'mini_exiftool_vendored'
+gem 'mini_exiftool'
