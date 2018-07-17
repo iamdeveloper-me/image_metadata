@@ -25,11 +25,8 @@ class PhotosController < ApplicationController
   end
 
   def update_metadata
-    # @image.iso = "this is iso"
-    # @image.f_number = "this is f_number"
-    @image.title = params[:title]
-    @image.comment = params[:comment]
-    @image.user_comment= params[:user_comment]
+    # Method to assign metadata to photo.
+    assign_metadata
 
     if @image.save
       flash[:success] = "Metadata updated Successfully."
@@ -53,5 +50,24 @@ class PhotosController < ApplicationController
       redirect_back fallback_location: root_path
     end
     @image = MiniExiftool.new @photo.avatar.path
+  end
+
+  def assign_metadata
+    @image.title = params[:title]
+    @image.creator = params[:creator]
+    @image.description = params[:description]
+    @image.city = params[:city]
+    @image.state = params[:state]
+    @image.country = params[:country]
+    @image.comment = params[:comment]
+    @image.user_comment = params[:user_comment]
+    @image.make = params[:make]
+    @image.model = params[:model]
+    @image.artist = params[:artist]
+    @image.owner_name = params[:owner_name]
+    @image.copyright = params[:copyright]
+    @image.image_description = params[:image_description]
+    @image.gps_latitude = params[:gps_latitude]
+    @image.gps_longitude = params[:gps_longitude]
   end
 end
