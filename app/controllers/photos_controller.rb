@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :find_photo, only: [:edit_metadata, :update_metadata]
+  before_action :find_photo, only: [:destroy, :edit_metadata, :update_metadata, :download]
+  before_action :find_photo_metadata, only: [:edit_metadata, :update_metadata]
 
   def index
     @photos = current_user.photos
@@ -21,6 +22,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo.destroy
+    flash[:success] = "Photo destroyed successfully."
+    redirect_to photos_path
+  end
+
   def edit_metadata
   end
 
@@ -37,6 +44,14 @@ class PhotosController < ApplicationController
     end
   end
 
+  def download
+    send_file(
+      @photo.avatar.path,
+      filename: @photo.avatar.file.filename # ,
+      # type: "image/png"
+    )
+  end
+
   private
 
   def photo_params
@@ -49,6 +64,9 @@ class PhotosController < ApplicationController
       flash[:error] = "Image not found!"
       redirect_back fallback_location: root_path
     end
+  end
+
+  def find_photo_metadata
     @image = MiniExiftool.new @photo.avatar.path
   end
 

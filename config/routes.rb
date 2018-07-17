@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :edit_metadata
       get :update_metadata
+      get :download
     end
   end
 end

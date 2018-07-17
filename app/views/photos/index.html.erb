@@ -7,8 +7,7 @@
       <th scope="col"> Image </th>
       <th scope="col"> Image Name </th>
       <th scope="col"> Mime Type </th>
-      <th scope="col"> Size </th>
-      <th scope="col"> Edit Metadata </th>
+      <th scope="col"> Actions </th>
     </tr>
   </thead>
   <tbody>
@@ -18,8 +17,13 @@
         <td> <%= image_tag(photo.avatar.url, size: "80x60") %> </td>
         <td> <%= photo.avatar.file.filename %> </td>
         <td> <%= photo.avatar.content_type %> </td>
-        <td> <%= photo.avatar.size %> </td>
-        <td> <%= link_to "Edit Meta", edit_metadata_photo_path(photo.id) %> </td>
+        <td>
+          <%= link_to "Edit Metadata", edit_metadata_photo_path(photo.id) %>
+          /
+          <%= link_to "Download", download_photo_path(photo.id) %>
+          /
+          <%= link_to "Destroy", photo_path(photo.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
