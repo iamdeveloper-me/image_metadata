@@ -28,3 +28,4 @@
 # Ignore database.yml file
 /config/database.yml
 public/uploads/*
+config/secrets.yml
