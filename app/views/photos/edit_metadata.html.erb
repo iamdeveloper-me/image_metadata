@@ -192,7 +192,7 @@
       <%= label_tag(:image_description, "Image Description") %>
     </div>
     <div class="col-md-6">
-      <%= text_field_tag :image_description,
+      <%= text_area_tag :image_description,
         @image.image_description,
         autofocus: true,
         autocomplete: "off",

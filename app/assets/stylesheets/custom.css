@@ -9,3 +9,7 @@
 .header_links li {
   display: inline-block;
 }
+
+body {
+  margin-bottom: 20px;
+}
