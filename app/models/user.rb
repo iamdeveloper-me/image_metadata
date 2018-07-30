@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Associations
-  has_many :photos
+  has_many :photos, dependent: :destroy
 end
