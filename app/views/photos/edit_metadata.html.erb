@@ -1,238 +1,245 @@
-<h3>Update Metadata</h3>
+<div class="container-fluid pageheading">
+	<div  class="container"><h3>Update Metadata</h3></div>
+</div>
 
-<%= form_tag({action: 'update_metadata'}, {method: :get}) do %>
-  <%= hidden_field_tag :id, @photo.id %>
+<div  class="container-fluid whitebox">
+	<div class="container padd15px martop15px">
+		<%= form_tag({action: 'update_metadata'}, {method: :get}) do %>
+			<%= hidden_field_tag :id, @photo.id %>
 
-  <br/><h4>XMP Tags:</h4>
+			<h4 class="forminnerheading paddtop0px">XMP Tags:</h4>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:title, "Title") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :title,
-        @image.title,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:title, "Title") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :title,
+						@image.title,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:creator, "Creator") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :creator,
-        @image.creator,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:creator, "Creator") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :creator,
+						@image.creator,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:description, "Description") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :description,
-        @image.description,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:description, "Description") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :description,
+						@image.description,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:city, "City") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :city,
-        @image.city,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:city, "City") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :city,
+						@image.city,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:state, "State") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :state,
-        @image.state,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:state, "State") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :state,
+						@image.state,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:country, "Country") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :country,
-        @image.country,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:country, "Country") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :country,
+						@image.country,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:comment, "Comment") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :comment,
-        @image.comment,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:comment, "Comment") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :comment,
+						@image.comment,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <br/><h4>EXIF Data(s):</h4>
+			<h4 class="forminnerheading">EXIF Data(s):</h4>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:user_comment, "User Comment") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :user_comment,
-        @image.user_comment,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:user_comment, "User Comment") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :user_comment,
+						@image.user_comment,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:make, "Make") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :make,
-        @image.make,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:make, "Make") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :make,
+						@image.make,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:model, "Model") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :model,
-        @image.model,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:model, "Model") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :model,
+						@image.model,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:artist, "Artist") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :artist,
-        @image.artist,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:artist, "Artist") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :artist,
+						@image.artist,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:owner_name, "Owner Name") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :owner_name,
-        @image.owner_name,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:owner_name, "Owner Name") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :owner_name,
+						@image.owner_name,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:copyright, "Copyright") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :copyright,
-        @image.copyright,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:copyright, "Copyright") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :copyright,
+						@image.copyright,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:image_description, "Image Description") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_area_tag :image_description,
-        @image.image_description,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:image_description, "Image Description") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_area_tag :image_description,
+						@image.image_description,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
+			<h4 class="forminnerheading">GPS Tags:</h4>
 
-  <br/><h4>GPS Tags:</h4>
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:gps_latitude, "GPS Latitude") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :gps_latitude,
+						@image.gps_latitude,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
 
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:gps_latitude, "GPS Latitude") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :gps_latitude,
-        @image.gps_latitude,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <div class="col-md-2">
-      <%= label_tag(:gps_longitude, "GPS Longitude") %>
-    </div>
-    <div class="col-md-6">
-      <%= text_field_tag :gps_longitude,
-        @image.gps_longitude,
-        autofocus: true,
-        autocomplete: "off",
-        class: 'form-control'
-      %>
-    </div>
-  </div>
-
-  <div class="actions text-center">
-    <%= submit_tag "Update", class: "btn btn-success" %>
-  </div>
-<% end %>
-
+			<div class="form-group row">
+				<div class="col-md-2">
+					<%= label_tag(:gps_longitude, "GPS Longitude") %>
+				</div>
+				<div class="col-md-6">
+					<%= text_field_tag :gps_longitude,
+						@image.gps_longitude,
+						autofocus: true,
+						autocomplete: "off",
+						class: 'form-control'
+					%>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-2"></div>
+				<div class="actions col-sm-6 text-left">
+					<%= submit_tag "Update", class: "btn btn-success" %>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

@@ -1,5 +1,10 @@
-<h3>Home Page</h3>
-
-<% if user_signed_in? %>
-  Welcome <strong><%= ("#{current_user.first_name} #{current_user.last_name}").titleize %></strong>
-<% end %>
+<div class="container-fluid pageheading">
+  <div  class="container"><h3>Home Page</h3></div>
+</div>
+<div  class="container-fluid whitebox">
+  <div class="container padd15px"> 
+    <% if user_signed_in? %>
+      Welcome <strong><%= ("#{current_user.first_name} #{current_user.last_name}").titleize %></strong>
+    <% end %>
+  </div>
+</div>

@@ -9,11 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body  style="background-color: #EFF2F7;">
-    <div class="container">
+  <body>
+    <div class="container-fluid nopadd">
       <%= render partial: 'shared/header' %>
+
       <%= render partial: 'shared/flash_messages' %>
       <%= yield %>
+
       <%= render partial: 'shared/footer' %>
     </div>
   </body>
