@@ -1,0 +1,30 @@
+<div class="container-fluid pageheading">
+  <div  class="container"><h3>Update Metadata</h3></div>
+</div>
+
+<div  class="container-fluid whitebox">
+  <div class="container padd15px martop15px">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col"> Image </th>
+          <th scope="col"> Image Name </th>
+          <th scope="col"> Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <%= image_tag(@photo.avatar.url, size: "80x60") %> </td>
+          <td> <%= @photo.avatar.file.filename %> </td>
+          <td>
+            <%= link_to "Download", download_image_photo_path(@photo.id) %>
+            /
+            <%= link_to "Destroy", delete_image_photo_path(@photo.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <%= render partial: 'edit_metadata_form', locals: { photo: @photo, image: @image, is_visitor: true } %>
+  </div>
+</div>
