@@ -72,3 +72,5 @@ gem 'carrierwave', '~> 1.0'
 # gem 'exif'
 gem 'mini_exiftool_vendored'
 gem 'mini_exiftool'
+# Enables to use crontab/cronjob
+gem 'whenever', require: false
